@@ -90,6 +90,8 @@ jobs:
             -DBUILD_ARCH=armv8-a
             # -DCOMPILE_WITHOUT_EXCEPTIONS=on # Apparently this can reduce the binary size, let's see.
             -DSSPLIT_USE_INTERNAL_PCRE2=ON
+            -DUSE_RUY_SGEMM=ON  # Use RUY for matrix multiplication (works on both x86 and ARM)
+            -DBUILD_SHARED_LIBS=ON  # BUILD SHARED LIBRARY INSTEAD OF EXECUTABLE
         )
         # Additionally list variables finally configured.
         cmake -L \
