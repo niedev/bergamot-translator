@@ -28,7 +28,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         submodules: recursive
 
@@ -114,7 +114,7 @@ jobs:
     - name: ccache epilog
       run: 'ccache -s # Print current cache stats'
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         path: ${{github.workspace}}/build/app/bergamot
 
@@ -127,7 +127,7 @@ jobs:
   #   if: github.ref == 'refs/heads/master'
   #   steps:
   #    - name: Download artifacts
-  #      uses: actions/download-artifact@v2
+  #      uses: actions/download-artifact@v3
   #     
   #    - name: Update GitHub prerelease
   #      uses: marvinpinto/action-automatic-releases@latest
